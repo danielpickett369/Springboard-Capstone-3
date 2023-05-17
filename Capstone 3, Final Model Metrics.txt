@@ -1,0 +1,148 @@
+Final features relevant to modeling:
+ - Identifying info:
+   - Agency: The transit property's legal name.
+   - Mode: The means of conveyance used for the service.
+   - Type of Service (TOS): Indicates whether the service is directly operated by the transit property,
+        or is operated by a third party through a purchased transportation agreement.
+ - Time series data of interest:
+   - Unlinked passenger trips (UPT): The number of passengers who board public transportation vehicles.
+        Passengers are counted each time they board vehicles no matter how many vehicles they use to travel
+        from their origin to their destination. Recorded from January 2002 to October 2022.
+
+Final models of the 24 selected lines:
+ - Line index #0:
+   - Agency: Cape Ann Transportation Authority
+   - Mode: Direct response (DR)
+   - TOS: Purchased transportation (PT)
+   - Model parameters: SARIMA(1, 0, 2)(5, 0, 0, 12)
+ - Line index #1:
+   - Agency: Trans-Bridge Lines, Inc.
+   - Mode: Commuter bus (CB)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(0, 0, 4)(1, 0, 1, 12)
+ - Line index #2:
+   - Agency: Private Transportation Corporation
+   - Mode: Bus (MB)
+   - TOS: Purchased transportation (PT)
+   - Model parameters: SARIMA(1, 0, 1)(0, 0, 1, 12)
+ - Line index #3:
+   - Agency: Hampton Jitney, Inc.
+   - Mode: Commuter bus (CB)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(1, 0, 1)(1, 0, 1, 12)
+ - Line index #4:
+   - Agency: Greater Richmond Transit Company
+   - Mode: Bus (MB)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(4, 0, 1)(0, 0, 1, 12)
+ - Line index #5:
+   - Agency: City of Fayetteville
+   - Mode: Bus (MB)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(0, 0, 4)(2, 0, 1, 12)
+ - Line index #6:
+   - Agency: Sarasota County
+   - Mode: Direct response (DR)
+   - TOS: Purchased transportation (PT)
+   - Model parameters: SARIMA(0, 0, 0)(1, 0, 1, 12)
+ - Line index #7:
+   - Agency: City of Rome
+   - Mode: Direct response (DR)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(1, 0, 2)(0, 0, 1, 12)
+ - Line index #8:
+   - Agency: Research Triangle Regional Public Transportation
+   - Mode: Bus (MB)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(0, 0, 0)(4, 0, 1, 12)
+ - Line index #9:
+   - Agency: Audubon Area Community Services, Inc.
+   - Mode: Direct response (DR)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(0, 0, 0)(4, 0, 0, 12)
+ - Line index #10:
+   - Agency: Saginaw Transit Authority Regional Service
+   - Mode: Direct response (DR)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(2, 0, 2)(1, 0, 1, 12)
+ - Line index #11:
+   - Agency: Michiana Area Council of Governments
+   - Mode: Bus (MB)
+   - TOS: Purchased transportation (PT)
+   - Model parameters: SARIMA(0, 0, 2)(3, 0, 1, 12)
+ - Line index #12:
+   - Agency: Butler County Regional Transit Authority
+   - Mode: Direct response (DR)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(0, 0, 0)(0, 0, 1, 12)
+ - Line index #13:
+   - Agency: Miami County, Ohio
+   - Mode: Direct response (DR)
+   - TOS: Purchased transportation (PT)
+   - Model parameters: SARIMA(1, 0, 1)(3, 0, 1, 12)
+ - Line index #14:
+   - Agency: Delaware County Transit Board
+   - Mode: Direct response (DR)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(0, 0, 0)(2, 0, 0, 12)
+ - Line index #15:
+   - Agency: Jackson County Mass Transit District
+   - Mode: Bus (MB)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(0, 0, 0)(0, 0, 1, 12)
+ - Line index #16:
+   - Agency: Brazos Transit District
+   - Mode: Direct response (DR)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(4, 0, 0)(4, 0, 1, 12)
+ - Line index #17:
+   - Agency: Concho Valley Transit District
+   - Mode: Bus (MB)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(1, 0, 1)(4, 0, 1, 12)
+ - Line index #18:
+   - Agency: Alamo Area Council of Governments
+   - Mode: Direct response (DR)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(2, 0, 0)(0, 0, 1, 12)
+ - Line index #19:
+   - Agency: University of Kansas
+   - Mode: Bus (MB)
+   - TOS: Purchased transportation (PT)
+   - Model parameters: SARIMA(4, 0, 1)(1, 0, 1, 12)
+ - Line index #20:
+   - Agency: River Bend Transit
+   - Mode: Direct response (DR)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(0, 0, 2)(0, 0, 2, 12)
+ - Line index #21:
+   - Agency: Great Falls Transit District
+   - Mode: Direct response (DR)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(1, 0, 1)(0, 0, 1, 12)
+ - Line index #22:
+   - Agency: City of Phoenix Public Transit Department
+   - Mode: Bus (MB)
+   - TOS: Purchased transportation (PT)
+   - Model parameters: SARIMA(1, 0, 1)(3, 0, 1, 12)
+ - Line index #23:
+   - Agency: City of Peoria
+   - Mode: Direct response (DR)
+   - TOS: Directly operated (DO)
+   - Model parameters: SARIMA(1, 0, 0)(4, 0, 1, 12)
+
+Hyperparameters for pmdarima.auto_arima():
+ - max_p = 6
+ - d = 0
+ - max_q = 6
+ - seasonal = True
+ - max_P = 5
+ - D = 0
+ - max_Q = 5
+ - m = 12
+ - information_criterion = 'aic'
+ - trace = False
+ - error_action = 'warn'
+ - stepwise = True
+ - All else default
+
